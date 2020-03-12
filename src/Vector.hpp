@@ -10,6 +10,9 @@ class Vector : public Matrix
 
     public:
         void addElement(Element element);
-        Vector add(Vector vector);
+
+        Vector add(const Vector vector);
+        Vector operator+(const Vector vector);
+
         void print();
 };

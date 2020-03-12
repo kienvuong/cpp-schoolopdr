@@ -2,13 +2,12 @@
 #include "Matrix.hpp"
 #include "Vector.hpp"
 
-
 void Vector::addElement(Element element)
 {
     elements.push_back(element);
 }
 
-Vector Vector::add(Vector vectorB)
+Vector Vector::add(const Vector vectorB)
 {
     std::vector<Element> elementsA = elements;
     std::vector<Element> elementsB = vectorB.elements;
@@ -20,6 +19,11 @@ Vector Vector::add(Vector vectorB)
     }
 
     return vectorC;
+}
+
+Vector Vector::operator+(const Vector vectorB)
+{
+    return this->add(vectorB);
 }
 
 void Vector::print()

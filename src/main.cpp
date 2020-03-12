@@ -9,11 +9,7 @@ int main()
 {
     std::cout << "Started program." << std::endl;
 
-    testColumnVectorAddition();
-    // RowVector rowVectorC = rowVectorA + rowVectorB;
-
-    // ColumnVector columnVectorA;
-    // ColumnVector columnVectorB;
+    testRowVectorAddition();
 
     return 0;
 }
@@ -30,7 +26,8 @@ void testRowVectorAddition()
     rowVectorB.addElement(5);
     rowVectorB.addElement(6);
 
-    auto rowVectorC = rowVectorA.add(rowVectorB);
+    auto rowVectorC = rowVectorA + rowVectorB;
+    // auto rowVectorC = rowVectorA.add(rowVectorB);
     rowVectorA.print();
     rowVectorB.print();
     rowVectorC.print();
