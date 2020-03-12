@@ -1,6 +1,21 @@
+#include <iostream>
+#include "Matrix.hpp"
 #include "Vector.hpp"
 
-int Vector::print()
+
+void Vector::addElement(Element element)
 {
-    return 5;
+    elements.push_back(element);
+}
+
+void Vector::print()
+{
+    std::cout << "[ ";
+
+    for (unsigned int i = 0; i < elements.size(); i++) {
+       std::cout << elements[i] << " ";
+    }
+
+    std::cout << "]";
+    std::cout << std::endl;
 }

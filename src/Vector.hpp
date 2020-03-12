@@ -1,5 +1,15 @@
-class Vector
+#pragma once
+
+#include "Matrix.hpp"
+#include <vector>
+
+class Vector : public Matrix
 {
+    private:
+        std::vector<Element> elements;
+
     public:
-        int print();
+        void addElement(Element element);
+        Vector add(Vector vector);
+        void print();
 };
