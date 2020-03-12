@@ -15,12 +15,11 @@ int main()
     rowVectorB.addElement(4);
     rowVectorB.addElement(5);
     rowVectorB.addElement(6);
-    rowVectorB.addElement(7);
 
-    // RowVector rowVectorC = rowVectorA.add(rowVectorB);
+    auto rowVectorC = rowVectorA.add(rowVectorB);
     rowVectorA.print();
     rowVectorB.print();
-    // rowVectorC.print();
+    rowVectorC.print();
     // RowVector rowVectorC = rowVectorA + rowVectorB;
 
     // ColumnVector columnVectorA;
