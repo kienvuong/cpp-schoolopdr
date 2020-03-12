@@ -2,10 +2,24 @@
 #include "RowVector.hpp"
 #include "ColumnVector.hpp"
 
+void testRowVectorAddition();
+void testColumnVectorAddition();
+
 int main()
 {
     std::cout << "Started program." << std::endl;
 
+    testColumnVectorAddition();
+    // RowVector rowVectorC = rowVectorA + rowVectorB;
+
+    // ColumnVector columnVectorA;
+    // ColumnVector columnVectorB;
+
+    return 0;
+}
+
+void testRowVectorAddition()
+{
     RowVector rowVectorA;
     rowVectorA.addElement(1);
     rowVectorA.addElement(2);
@@ -20,10 +34,22 @@ int main()
     rowVectorA.print();
     rowVectorB.print();
     rowVectorC.print();
-    // RowVector rowVectorC = rowVectorA + rowVectorB;
+}
 
-    // ColumnVector columnVectorA;
-    // ColumnVector columnVectorB;
+void testColumnVectorAddition()
+{
+    ColumnVector columnVectorA;
+    columnVectorA.addElement(1);
+    columnVectorA.addElement(2);
+    columnVectorA.addElement(3);
 
-    return 0;
+    ColumnVector columnVectorB;
+    columnVectorB.addElement(4);
+    columnVectorB.addElement(5);
+    columnVectorB.addElement(6);
+
+    auto columnVectorC = columnVectorA.add(columnVectorB);
+    columnVectorA.print();
+    columnVectorB.print();
+    columnVectorC.print();
 }
