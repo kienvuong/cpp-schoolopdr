@@ -6,10 +6,10 @@ class RowVector : public Vector
 {
     public:
         RowVector();
-        RowVector(Vector const &v);
         RowVector(Element);
         RowVector(Element, Element);
         RowVector(Element, Element, Element);
+        RowVector(Vector const &v); // For type casting, see: https://stackoverflow.com/a/22880726
 
         RowVector operator+(Vector const vectorB);
         RowVector operator-(Vector const vectorB);
