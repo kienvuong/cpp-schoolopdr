@@ -13,8 +13,9 @@ LIBRARIES	:=
 MAIN_EXEC	:= $(BIN)/main
 
 TEST_OBJS	:= \
+	$(filter-out $(SRC)/main.cpp, $(wildcard $(SRC)/*.cpp)) \
 	$(TEST)/main.cpp \
-	$(filter-out $(SRC)/main.cpp, $(wildcard $(SRC)/*.cpp))
+	$(TEST)/test_*.cpp
 TEST_EXEC	:= $(BIN)/run_test
 
 all: $(MAIN_EXEC)
