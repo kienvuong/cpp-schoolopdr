@@ -21,7 +21,7 @@ class Vector
 
         Vector add(Vector const vectorB);
         Vector subtract(Vector const vectorB);
-        Vector multiply(int const scalar);
+        Vector multiply(Scalar const scalar);
         Vector multiply(Vector const vectorB);
 
         bool equals(Vector const) const;

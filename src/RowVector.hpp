@@ -14,7 +14,7 @@ class RowVector : public Vector
         RowVector operator+(Vector const vectorB);
         RowVector operator-(Vector const vectorB);
 
-        RowVector operator*(int const scalar);
+        RowVector operator*(Scalar const scalar);
         RowVector operator*(Vector const vectorB);
 
         bool operator==(RowVector const) const;

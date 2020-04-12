@@ -58,7 +58,7 @@ Vector Vector::subtract(Vector const vectorB)
     return vectorC;
 }
 
-Vector Vector::multiply(const int scalar)
+Vector Vector::multiply(Scalar const scalar)
 {
     std::vector<Element> elementsA = elements;
 
