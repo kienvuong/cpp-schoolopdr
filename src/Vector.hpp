@@ -8,7 +8,7 @@ class Vector
         using Element = double;
         using Scalar = double;
 
-    private:
+    protected:
         std::vector<Element> elements;
 
     public:

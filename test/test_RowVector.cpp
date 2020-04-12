@@ -1,5 +1,6 @@
 #include <Catch2/catch.hpp>
 #include "RowVector.hpp"
+#include "ColumnVector.hpp"
 
 TEST_CASE("RowVector can be added/subtracted with another") {
     RowVector vectorA(1, 2, 3);
@@ -37,4 +38,13 @@ TEST_CASE("RowVector can be multiplied with another") {
         RowVector expected(4, 10, 18);
         REQUIRE(actual == expected);
     }
+}
+
+TEST_CASE("RowVector can be transposed to ColumnVector") {
+    RowVector rowVector(1, 2, 3);
+
+    ColumnVector expected(1, 2, 3);
+    ColumnVector actual = rowVector.transpose();
+
+    REQUIRE(actual == expected);
 }
