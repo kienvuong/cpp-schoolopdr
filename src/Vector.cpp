@@ -39,8 +39,8 @@ ElementList Vector::getElements()
 
 Vector Vector::add(Vector const vectorB)
 {
-    std::vector<Element> elementsA = elements;
-    std::vector<Element> elementsB = vectorB.elements;
+    ElementList elementsA = elements;
+    ElementList elementsB = vectorB.elements;
 
     Vector vectorC;
 
@@ -53,8 +53,8 @@ Vector Vector::add(Vector const vectorB)
 
 Vector Vector::subtract(Vector const vectorB)
 {
-    std::vector<Element> elementsA = elements;
-    std::vector<Element> elementsB = vectorB.elements;
+    ElementList elementsA = elements;
+    ElementList elementsB = vectorB.elements;
 
     Vector vectorC;
 
@@ -67,7 +67,7 @@ Vector Vector::subtract(Vector const vectorB)
 
 Vector Vector::multiply(Scalar const scalar)
 {
-    std::vector<Element> elementsA = elements;
+    ElementList elementsA = elements;
 
     Vector vectorC;
 
@@ -80,8 +80,8 @@ Vector Vector::multiply(Scalar const scalar)
 
 Vector Vector::multiply(Vector const vectorB)
 {
-    std::vector<Element> elementsA = elements;
-    std::vector<Element> elementsB = vectorB.elements;
+    ElementList elementsA = elements;
+    ElementList elementsB = vectorB.elements;
 
     Vector vectorC;
 
@@ -94,8 +94,8 @@ Vector Vector::multiply(Vector const vectorB)
 
 double Vector::dotProduct(Vector const vectorB)
 {
-    std::vector<Element> elementsA = elements;
-    std::vector<Element> elementsB = vectorB.elements;
+    ElementList elementsA = elements;
+    ElementList elementsB = vectorB.elements;
 
     double dotProduct = 0;
 
@@ -108,8 +108,8 @@ double Vector::dotProduct(Vector const vectorB)
 
 bool Vector::equals(Vector const vectorB) const
 {
-    std::vector<Element> elementsA = elements;
-    std::vector<Element> elementsB = vectorB.elements;
+    ElementList elementsA = elements;
+    ElementList elementsB = vectorB.elements;
 
     for (unsigned int i = 0; i < elementsA.size(); i++) {
         if (elementsA[i] != elementsB[i]) {
