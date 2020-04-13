@@ -98,7 +98,7 @@ void Matrix::print()
 
         std::cout << "|";
 
-        if (rowIndex < lastRowIndex) {
+        if (rowIndex <= lastRowIndex) {
             std::cout << std::endl;
         }
     }
