@@ -92,6 +92,20 @@ Vector Vector::multiply(Vector const vectorB)
     return vectorC;
 }
 
+double Vector::dotProduct(Vector const vectorB)
+{
+    std::vector<Element> elementsA = elements;
+    std::vector<Element> elementsB = vectorB.elements;
+
+    double dotProduct = 0;
+
+    for (unsigned int i = 0; i < elementsA.size(); i++){
+        dotProduct += elementsA[i] * elementsB[i];
+    }
+
+    return dotProduct;
+}
+
 bool Vector::equals(Vector const vectorB) const
 {
     std::vector<Element> elementsA = elements;

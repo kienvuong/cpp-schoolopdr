@@ -26,5 +26,7 @@ class Vector
         Vector multiply(Scalar const scalar);
         Vector multiply(Vector const vectorB);
 
+        double dotProduct(Vector const vectorB);
+
         bool equals(Vector const) const;
 };

@@ -49,6 +49,35 @@ TEST_CASE("ColumnVector can be multiplied with another") {
     }
 }
 
+TEST_CASE("ColumnVector dot product with second vector")
+{
+    ColumnVector columnVectorA(1, 2, 3);
+    ColumnVector columnVectorB(4, -5, 6);
+
+    /*
+    Formula:
+        a ⋅ b = 1(4) + 2(-5) + 3(6)
+            = 4 − 10 + 18
+            = 12
+    */
+    float expected = 1 * 4 + 2 * (-5) + 3 * 6;
+
+    SECTION("as ColumnVector")
+    {
+        float actual = columnVectorA.dotProduct(columnVectorB);
+
+        REQUIRE(actual == expected);
+    }
+
+    SECTION("as RowVector")
+    {
+        RowVector rowVectorB(4, -5, 6);
+        float actual = columnVectorA.dotProduct(rowVectorB);
+
+        REQUIRE(actual == expected);
+    }
+}
+
 TEST_CASE("ColumnVector can be transposed to RowVector") {
     ColumnVector columnVector(1, 2, 3);
 
