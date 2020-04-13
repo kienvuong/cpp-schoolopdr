@@ -7,9 +7,10 @@ class Vector
     public:
         using Element = double;
         using Scalar = double;
+        using ElementList = std::vector<Element>;
 
     protected:
-        std::vector<Element> elements;
+        ElementList elements;
 
     public:
         Vector();
@@ -18,6 +19,7 @@ class Vector
         Vector(Element, Element, Element);
 
         void addElement(Element element);
+        ElementList getElements();
 
         Vector add(Vector const vectorB);
         Vector subtract(Vector const vectorB);
@@ -25,6 +27,4 @@ class Vector
         Vector multiply(Vector const vectorB);
 
         bool equals(Vector const) const;
-
-        void print();
 };

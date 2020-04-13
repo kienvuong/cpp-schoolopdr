@@ -2,6 +2,15 @@
 #include "ColumnVector.hpp"
 #include "RowVector.hpp"
 
+TEST_CASE("ColumnVector can get elements") {
+    ColumnVector vector(1, 2, 3);
+
+    std::vector<double> expected = {1, 2, 3};
+    std::vector<double> actual = vector.getElements();
+
+    REQUIRE(actual == expected);
+}
+
 TEST_CASE("ColumnVector can be added/subtracted with another") {
     ColumnVector vectorA(1, 2, 3);
     ColumnVector vectorB(4, 5, 6);

@@ -2,6 +2,8 @@
 #include "Matrix.hpp"
 #include "Vector.hpp"
 
+using ElementList = Vector::ElementList;
+
 Vector::Vector()
 {
     //
@@ -28,6 +30,11 @@ Vector::Vector(Element e1, Element e2, Element e3)
 void Vector::addElement(Element element)
 {
     elements.push_back(element);
+}
+
+ElementList Vector::getElements()
+{
+    return elements;
 }
 
 Vector Vector::add(Vector const vectorB)
@@ -97,16 +104,4 @@ bool Vector::equals(Vector const vectorB) const
     }
 
     return true;
-}
-
-void Vector::print()
-{
-    std::cout << "[ ";
-
-    for (unsigned int i = 0; i < elements.size(); i++) {
-       std::cout << elements[i] << " ";
-    }
-
-    std::cout << "]";
-    std::cout << std::endl;
 }
