@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Matrix.hpp"
 
 Matrix::Matrix() {}
@@ -79,4 +80,32 @@ bool Matrix::operator==(Matrix const matrixB) const
     }
 
     return true;
+}
+
+void Matrix::print()
+{
+    auto lastRowIndex = rowVectors.size() - 1;
+
+    for (unsigned int rowIndex = 0; rowIndex <= lastRowIndex; rowIndex++) {
+        std::cout << "| ";
+
+        auto elements = rowVectors[rowIndex].getElements();
+        auto lastElementIndex = elements.size() - 1;
+
+        for (unsigned int elementIndex = 0; elementIndex <= lastElementIndex; elementIndex++) {
+            std::cout << elements[elementIndex] << " ";
+        }
+
+        std::cout << "|";
+
+        if (rowIndex < lastRowIndex) {
+            std::cout << std::endl;
+        }
+    }
+}
+
+void Matrix::println()
+{
+    print();
+    std::cout << std::endl;
 }

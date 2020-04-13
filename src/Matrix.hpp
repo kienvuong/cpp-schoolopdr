@@ -24,4 +24,7 @@ class Matrix
         Matrix operator*(Scalar const scalar);
 
         bool operator==(Matrix const matrixB) const;
+
+        void print();
+        void println();
 };
