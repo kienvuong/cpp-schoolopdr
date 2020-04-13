@@ -53,3 +53,20 @@ TEST_CASE("Matrix can be multiplied with scalar") {
         REQUIRE(actual == expected);
     }
 }
+
+TEST_CASE("Matrix can be transposed") {
+    Matrix matrixA(
+        RowVector(1, 2, 3),
+        RowVector(4, 5, 6),
+        RowVector(7, 8, 9)
+    );
+
+    Matrix expected(
+        RowVector(1, 4, 7),
+        RowVector(2, 5, 8),
+        RowVector(3, 6, 9)
+    );
+    Matrix actual = matrixA.transpose();
+
+    REQUIRE(actual == expected);
+}

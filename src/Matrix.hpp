@@ -25,6 +25,8 @@ class Matrix
 
         bool operator==(Matrix const matrixB) const;
 
+        Matrix transpose();
+
         void print();
         void println();
 };

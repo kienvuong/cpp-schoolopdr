@@ -82,6 +82,44 @@ bool Matrix::operator==(Matrix const matrixB) const
     return true;
 }
 
+Matrix Matrix::transpose()
+{
+    Matrix transposedMatrix;
+
+    //     0 1 2
+    // 0: [1 2 3] <- untransposedRowVector
+    // 1: [4 5 6]
+    // 2: [7 8 9]
+    // 3: [5 0 5]
+
+    // [1 4 7 5] <- transposedRowVector
+    // [2 5 8 0] <- transposedRowVector
+    // [3 6 9 5]
+
+    auto lastRowIndex = rowVectors.size() - 1;
+    // auto lastColumnIndex =
+
+    for (unsigned int rowIndex = 0; rowIndex <= lastRowIndex; rowIndex++) {
+        RowVector untransposedRowVector = rowVectors[rowIndex];
+
+        auto transposedRowCount = untransposedRowVector.getElements().size();
+        auto lastTransposedRowIndex = transposedRowCount - 1;
+
+        RowVector transposedRowVector;
+
+        for (unsigned int transposedElementIndex = 0; transposedElementIndex <= lastRowIndex; transposedElementIndex++) {
+            for (unsigned int untransposedRowIndex = 0; untransposedRowIndex <= lastRowIndex; untransposedRowIndex++) {
+                auto untransposedElements = rowVectors[untransposedRowIndex].getElements();
+                transposedRowVector.addElement(untransposedElements[transposedElementIndex]);
+            }
+        }
+
+        transposedMatrix.addRowVector(transposedRowVector);
+    }
+
+    return transposedMatrix;
+}
+
 void Matrix::print()
 {
     auto lastRowIndex = rowVectors.size() - 1;
