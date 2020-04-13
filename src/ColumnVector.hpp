@@ -25,4 +25,7 @@ class ColumnVector : public Vector
         bool operator!=(ColumnVector const) const;
 
         RowVector transpose();
+
+        void print();
+        void println();
 };

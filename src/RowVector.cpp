@@ -1,3 +1,4 @@
+#include <iostream>
 #include "RowVector.hpp"
 
 RowVector::RowVector() : Vector() {}
@@ -48,4 +49,23 @@ ColumnVector RowVector::transpose()
     // return columnVector;
 
     return (*this);
+}
+
+void RowVector::print()
+{
+    std::cout << "[ ";
+
+    for (unsigned int i = 0; i <= elements.size() - 1; i++) {
+        std::cout << elements[i];
+
+        std::cout << " ";
+    }
+
+    std::cout << "]" << std::endl;
+}
+
+void RowVector::println()
+{
+    print();
+    std::cout << std::endl;
 }
