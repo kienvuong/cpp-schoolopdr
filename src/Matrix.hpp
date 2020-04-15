@@ -6,9 +6,10 @@ class Matrix
 {
     public:
         using Scalar = Vector::Scalar;
+        using RowVectorList = std::vector<RowVector>;
 
     private:
-        std::vector<RowVector> rowVectors;
+        RowVectorList rowVectors;
 
     public:
         Matrix();
@@ -22,6 +23,7 @@ class Matrix
         Matrix operator-(Matrix const matrixB);
 
         Matrix operator*(Scalar const scalar);
+        Matrix operator*(Scalar const matrixB);
 
         bool operator==(Matrix const matrixB) const;
 

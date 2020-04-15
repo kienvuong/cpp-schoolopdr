@@ -1,6 +1,9 @@
 #include <iostream>
 #include "Matrix.hpp"
 
+using ElementList = Vector::ElementList;
+using Element = Vector::Element;
+
 Matrix::Matrix() {}
 
 Matrix::Matrix(RowVector v1)
@@ -64,6 +67,27 @@ Matrix Matrix::operator*(Scalar const scalar)
         RowVector vectorC = rowVectors[i] * scalar;
         matrixC.addRowVector(vectorC);
     }
+
+    return matrixC;
+}
+
+Matrix Matrix::operator*(Matrix const matrixB)
+{
+    RowVectorList rowVectorsA = rowVectors;
+    RowVectorList rowVectorsB = matrixB.rowVectors;
+
+    Matrix matrixC;
+
+    // 0e rij van A
+    // 0e element van 0e kolom van B
+
+    RowVector rowVectorA = rowVectorsA[0];
+    RowVector rowVectorB = rowVectorsB[0];
+    Vector::Element a = rowVectorB.getElements()[0];
+
+    // for (unsigned int i = 0; i < ; i++){
+
+    // }
 
     return matrixC;
 }
