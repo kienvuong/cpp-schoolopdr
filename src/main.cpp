@@ -1,18 +1,21 @@
 #include <iostream>
 #include "RowVector.hpp"
 #include "ColumnVector.hpp"
+#include "Matrix.hpp"
 
 int main()
 {
     std::cout << "Started program." << std::endl;
 
-    RowVector rowVectorA(1, 2, 3);
-    ColumnVector columnVectorA(4, 5, 0);
+    Matrix matrixA(
+        RowVector(1, 2, 3),
+        RowVector(4, 5, 6),
+        RowVector(7, 8, 9)
+    );
+    matrixA.addRowVector(RowVector(5, 0, 5));
 
-    rowVectorA.println();
-    columnVectorA.println();
-
-    (rowVectorA + columnVectorA).print();
+    matrixA = matrixA.transpose();
+    matrixA.println();
 
     return 0;
 }

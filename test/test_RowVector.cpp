@@ -76,6 +76,27 @@ TEST_CASE("RowVector dot product with second vector")
     }
 }
 
+TEST_CASE("RowVector cross product with second vector")
+{
+    SECTION("1x3 cross product 1x3") {
+        RowVector rowVectorA(1, 2, 3);
+        RowVector rowVectorB(4, 5, 7);
+
+        /*
+        Formula:
+            a x b = [
+                e2 = 1(5) - 4(2) = -3,
+                e0 = 2(7) - 5(3) = -1,
+                e1 = 3(4) - 7(1) = 5
+            ]
+        */
+        RowVector expected(-1, 5, -3);
+        RowVector actual = rowVectorA.crossProduct(rowVectorB);
+
+        REQUIRE(actual == expected);
+    }
+}
+
 TEST_CASE("RowVector can be transposed to ColumnVector") {
     RowVector rowVector(1, 2, 3);
 

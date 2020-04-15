@@ -106,6 +106,35 @@ double Vector::dotProduct(Vector const vectorB)
     return dotProduct;
 }
 
+Vector Vector::crossProduct(Vector const vectorB)
+{
+    ElementList elementsA = elements;
+    ElementList elementsB = vectorB.elements;
+
+    Vector vectorC;
+
+    // aanname: vector is minimaal 2 groot
+    // aanname: vectorA size == vectorB size
+
+    for (unsigned int a1 = 1; a1 < elementsA.size(); a1++) {
+        unsigned int b1 = a1 + 1;
+
+        int lastElementIndex = elements.size() - 1;
+
+        if (a1 == lastElementIndex) {
+            b1 = 0;
+        }
+
+        vectorC.addElement(
+            elementsA[a1] * elementsB[b1] - elementsA[b1] * elementsB[a1]
+        );
+    }
+
+    vectorC.addElement(elementsA[0] * elementsB[1] - elementsA[1] * elementsB[0]);
+
+    return vectorC;
+}
+
 bool Vector::equals(Vector const vectorB) const
 {
     ElementList elementsA = elements;

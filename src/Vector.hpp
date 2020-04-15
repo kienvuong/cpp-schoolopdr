@@ -27,6 +27,7 @@ class Vector
         Vector multiply(Vector const vectorB);
 
         double dotProduct(Vector const vectorB);
+        Vector crossProduct(Vector const vectorB);
 
         bool equals(Vector const) const;
 };
