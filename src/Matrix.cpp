@@ -83,7 +83,7 @@ Matrix Matrix::operator*(Matrix const matrixB)
 
     RowVector rowVectorA = rowVectorsA[0];
     RowVector rowVectorB = rowVectorsB[0];
-    Vector::Element a = rowVectorB.getElements()[0];
+    Element a = rowVectorB.getElements()[0];
 
     // for (unsigned int i = 0; i < ; i++){
 

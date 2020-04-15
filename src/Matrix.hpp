@@ -23,7 +23,7 @@ class Matrix
         Matrix operator-(Matrix const matrixB);
 
         Matrix operator*(Scalar const scalar);
-        Matrix operator*(Scalar const matrixB);
+        Matrix operator*(Matrix const matrixB);
 
         bool operator==(Matrix const matrixB) const;
 
