@@ -78,16 +78,27 @@ Matrix Matrix::operator*(Matrix const matrixB)
 
     Matrix matrixC;
 
-    // 0e rij van A
-    // 0e element van 0e kolom van B
+    for (unsigned int rowVectorCIndex = 0; rowVectorCIndex < rowVectorsA.size(); rowVectorCIndex++) {
+        RowVector rowVectorC;
 
-    RowVector rowVectorA = rowVectorsA[0];
-    RowVector rowVectorB = rowVectorsB[0];
-    Element a = rowVectorB.getElements()[0];
+        RowVector rowVectorA = rowVectorsA[rowVectorCIndex];
+        unsigned int matrixBColumnSize = rowVectorsB[0].getElements().size();
 
-    // for (unsigned int i = 0; i < ; i++){
+        for (unsigned int matrixBColumnIndex = 0; matrixBColumnIndex < matrixBColumnSize; matrixBColumnIndex++) {
+            ColumnVector matrixBColumn;
+            unsigned int matrixBRowSize = rowVectorsA[0].getElements().size();
 
-    // }
+            for (unsigned int matrixBRowIndex = 0; matrixBRowIndex < matrixBRowSize; matrixBRowIndex++) {
+                RowVector matrixBRow = rowVectorsB[matrixBRowIndex];
+                Element matrixBColumnElement = matrixBRow.getElements()[matrixBColumnIndex];
+                matrixBColumn.addElement(matrixBColumnElement);
+            }
+
+            rowVectorC.addElement(rowVectorA.dotProduct(matrixBColumn));
+        }
+
+        matrixC.addRowVector(rowVectorC);
+    }
 
     return matrixC;
 }

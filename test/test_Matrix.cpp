@@ -73,7 +73,8 @@ TEST_CASE("Matrix can be multiplied with another") {
 
         Matrix matrixB(
             RowVector(1, 2),
-            RowVector(4, 3)
+            RowVector(4, 3),
+            RowVector(0, 5)
         );
 
         /**
