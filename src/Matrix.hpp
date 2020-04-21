@@ -1,8 +1,9 @@
 #pragma once
 
 #include "RowVector.hpp"
+#include "CanPrint.hpp"
 
-class Matrix
+class Matrix : public CanPrint
 {
     public:
         using Scalar = Vector::Scalar;

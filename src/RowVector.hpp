@@ -2,10 +2,11 @@
 
 #include "Vector.hpp"
 #include "ColumnVector.hpp"
+#include "CanPrint.hpp"
 
 class ColumnVector;
 
-class RowVector : public Vector
+class RowVector : public Vector, public CanPrint
 {
     public:
         RowVector();
