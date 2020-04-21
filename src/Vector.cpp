@@ -97,13 +97,13 @@ double Vector::dotProduct(Vector const vectorB)
     ElementList elementsA = elements;
     ElementList elementsB = vectorB.elements;
 
-    double dotProduct = 0;
+    double result = 0;
 
-    for (unsigned int i = 0; i < elementsA.size(); i++){
-        dotProduct += elementsA[i] * elementsB[i];
+    for (unsigned int i = 0; i < elementsA.size(); i++) {
+        result += elementsA[i] * elementsB[i];
     }
 
-    return dotProduct;
+    return result;
 }
 
 Vector Vector::crossProduct(Vector const vectorB)
