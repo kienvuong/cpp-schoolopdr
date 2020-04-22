@@ -16,24 +16,32 @@ int main()
     rowVectorC.println();
 
     //----------------------------------------------------
+
+    std::cout << "Transpose rowvector to columnvector" << std::endl;
+
+    RowVector rowVectorD(1, 2, 3);
+    ColumnVector columnVectorE;
+    columnVectorE = rowVectorD.transpose();
+
+    columnVectorE.println();
+
+    //----------------------------------------------------
     std::cout << "------------------------------" << std::endl;
-    std::cout << "Substract Matrices" << std::endl;
+    std::cout << "Multiply matrices" << std::endl;
 
-    Matrix matrixA(
-        RowVector(2, 2, 2),
-        RowVector(2, 2, 2),
-        RowVector(2, 2, 2) );
+    Matrix matrixP(
+        RowVector(1, 2, 3),
+        RowVector(4, 5, 6),
+        RowVector(7, 8, 9));
 
-    Matrix matrixB(
-        RowVector(1, 1, 1),
-        RowVector(1, 1, 1),
-        RowVector(1, 1, 1) );
 
-    Matrix matrixC;
-    matrixC = matrixA - matrixB;
+    RowVector rowVectorH(1, 2, 3);
 
-    matrixC.println();
+    Matrix matrixR;
 
+    matrixR = matrixP * rowVectorH;
+
+    matrixR.println();
 
     //----------------------------------------------------
     std::cout << "------------------------------" << std::endl;
@@ -44,7 +52,7 @@ int main()
         RowVector(2, 2, 2),
         RowVector(2, 2, 2));
 
-    matrixD.addRowVector(RowVector(1, 2, 3));
+    matrixD.addRowVector(RowVector(5, 2, 3));
 
     matrixD.println();
 
