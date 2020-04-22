@@ -113,9 +113,6 @@ Vector Vector::crossProduct(Vector const vectorB)
 
     Vector vectorC;
 
-    // aanname: vector is minimaal 2 groot
-    // aanname: vectorA size == vectorB size
-
     for (unsigned int a1 = 1; a1 < elementsA.size(); a1++) {
         unsigned int b1 = a1 + 1;
 

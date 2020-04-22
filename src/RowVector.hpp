@@ -13,8 +13,8 @@ class RowVector : public Vector, public CanPrint
         RowVector(Element);
         RowVector(Element, Element);
         RowVector(Element, Element, Element);
-        RowVector(Vector const &v); // For type casting, see: https://stackoverflow.com/a/22880726
-        RowVector(ColumnVector const &v); // For type casting, see: https://stackoverflow.com/a/22880726
+        RowVector(Vector const &v);
+        RowVector(ColumnVector const &v);
 
         RowVector operator+(Vector const vectorB);
         RowVector operator-(Vector const vectorB);
